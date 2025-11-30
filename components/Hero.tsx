@@ -108,13 +108,13 @@ export const Hero: React.FC = () => {
             {/* Audio Guide Section */}
             <div className="w-full mt-8 p-4 bg-[#141414]/80 backdrop-blur-lg rounded-2xl border border-[#27272a]">
               <div className="flex items-center gap-3 mb-3">
-                <span className="bg-[#22c55e]/20 p-2 rounded-full">
+                <span className="bg-[#22c55e]/20 p-2 rounded-full" aria-hidden="true">
                   <svg className="w-5 h-5 text-[#22c55e]" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z"/>
                   </svg>
                 </span>
                 <div>
-                  <p className="text-[#fafafa] font-semibold text-sm">🎧 توضیحات صوتی محصول</p>
+                  <p className="text-[#fafafa] font-semibold text-sm" aria-hidden="true">🎧 توضیحات صوتی محصول</p>
                   <p className="text-[#a1a1aa] text-xs">برای شنیدن توضیحات کامل، پخش کنید</p>
                 </div>
               </div>
@@ -122,6 +122,7 @@ export const Hero: React.FC = () => {
                 controls 
                 preload="none"
                 className="w-full h-10 rounded-lg"
+                aria-label="توضیحات صوتی محصول ChatGPT Go"
               >
                 <source src="https://raw.githubusercontent.com/tawanamohammadi/chatgptgo/main/audio/gotgo.mp3" type="audio/mpeg" />
                 مرورگر شما از پخش صوت پشتیبانی نمی‌کند.
