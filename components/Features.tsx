@@ -20,7 +20,7 @@ export const Features: React.FC = () => {
             <h2 className="text-2xl md:text-4xl font-black mb-3 text-foreground tracking-tight">
                 {content.features.title}
             </h2>
-            <p className="text-brand-muted dark:text-brand-mutedLight text-sm md:text-lg font-light max-w-2xl mx-auto">
+            <p className="text-[#b3b3b3] text-sm md:text-lg font-light max-w-2xl mx-auto">
                 {content.features.subtitle}
             </p>
         </div>
@@ -37,10 +37,10 @@ export const Features: React.FC = () => {
                     layout
                     onClick={() => toggleFeature(idx)}
                     className={`
-                        relative overflow-hidden cursor-pointer group rounded-2xl border transition-all duration-500
+                        relative overflow-hidden cursor-pointer group rounded-2xl border transition-all duration-300
                         ${isActive 
-                            ? 'bg-white/90 dark:bg-brand-accent/5 border-brand-accent/30 shadow-[0_0_30px_-10px_rgba(99,102,241,0.2)] ring-1 ring-brand-accent/20' 
-                            : 'bg-white/70 dark:bg-white/5 border-white/60 dark:border-white/5 hover:bg-white/90 dark:hover:bg-white/10 hover:border-brand-accent/20 shadow-sm'
+                            ? 'bg-[#181818] border-[#1DB954]/50 shadow-[0_0_30px_rgba(29,185,84,0.3)] ring-1 ring-[#1DB954]/30' 
+                            : 'bg-[#181818] border-[#282828] hover:bg-[#282828] hover:border-[#1DB954]/30 hover:-translate-y-1 hover:shadow-xl'
                         }
                         backdrop-blur-xl
                     `}
@@ -52,7 +52,7 @@ export const Features: React.FC = () => {
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
-                                className="absolute inset-0 bg-gradient-to-br from-brand-accent/5 via-transparent to-brand-secondary/5 pointer-events-none"
+                                className="absolute inset-0 bg-gradient-to-br from-[#1DB954]/10 via-transparent to-[#1ed760]/5 pointer-events-none"
                             />
                         )}
                     </AnimatePresence>
@@ -62,22 +62,22 @@ export const Features: React.FC = () => {
                             <div className="flex items-center gap-4">
                                 {/* Icon Box */}
                                 <div className={`
-                                    p-3 rounded-xl transition-all duration-500
+                                    p-3 rounded-xl transition-all duration-300
                                     ${isActive 
-                                        ? 'bg-brand-accent text-white shadow-lg shadow-brand-accent/30 scale-110' 
-                                        : 'bg-brand-accent/10 text-brand-accent group-hover:scale-105'
+                                        ? 'bg-[#1DB954] text-black shadow-lg shadow-[#1DB954]/30 scale-110' 
+                                        : 'bg-[#1DB954]/10 text-[#1DB954] group-hover:scale-105'
                                     }
                                 `}>
                                     <feature.icon size={20} strokeWidth={isActive ? 2.5 : 2} />
                                 </div>
                                 
-                                <h3 className={`font-bold text-base md:text-lg transition-colors duration-300 ${isActive ? 'text-brand-accent' : 'text-foreground'}`}>
+                                <h3 className={`font-bold text-base md:text-lg transition-colors duration-300 ${isActive ? 'text-[#1DB954]' : 'text-white'}`}>
                                     {itemContent.title}
                                 </h3>
                             </div>
 
                             {/* Indicator */}
-                            <div className={`text-brand-mutedLight transition-transform duration-300 ${isActive ? 'rotate-180 text-brand-accent' : ''}`}>
+                            <div className={`transition-all duration-300 ${isActive ? 'rotate-180 text-[#1DB954] bg-[#1DB954]/20 rounded-full p-1' : 'text-[#727272]'}`}>
                                 {isActive ? <Minus size={16} /> : <Plus size={16} />}
                             </div>
                         </div>
@@ -90,7 +90,7 @@ export const Features: React.FC = () => {
                                     exit={{ height: 0, opacity: 0, marginTop: 0 }}
                                     className="overflow-hidden"
                                 >
-                                    <p className="text-sm text-brand-muted dark:text-brand-mutedLight leading-relaxed border-t border-black/5 dark:border-white/5 pt-4">
+                                    <p className="text-sm text-[#b3b3b3] leading-relaxed border-t border-[#282828] pt-4">
                                         {itemContent.desc}
                                     </p>
                                 </motion.div>
