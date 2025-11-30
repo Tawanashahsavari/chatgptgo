@@ -15,7 +15,7 @@ import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 const BackgroundWrapper: React.FC = () => {
     const { theme } = useTheme();
     return (
-        <div className={`fixed inset-0 z-[-1] transition-colors duration-1000 ${theme === 'dark' ? 'mesh-bg' : 'light-mesh'}`}></div>
+        <div className={`fixed inset-0 z-[-1] transition-colors duration-1000 ${theme === 'dark' ? 'mesh-bg' : 'light-mesh'}`} style={{ willChange: 'background-color' }}></div>
     );
 };
 
@@ -23,7 +23,7 @@ const MainContent: React.FC = () => {
     const { content } = useLanguage();
     
     return (
-        <div className="min-h-screen text-foreground font-sans selection:bg-brand-accent selection:text-white overflow-x-hidden relative">
+        <div className="min-h-screen text-foreground font-sans selection:bg-[#1DB954] selection:text-black overflow-x-hidden relative">
             <BackgroundWrapper />
             
             <Header />
@@ -37,15 +37,15 @@ const MainContent: React.FC = () => {
 
                 {/* Final CTA */}
                 <section className="py-32 container mx-auto px-6 text-center">
-                    <div className="bg-white/40 dark:bg-white/5 backdrop-blur-2xl border border-white/50 dark:border-white/10 rounded-[3rem] p-12 md:p-20 shadow-2xl relative overflow-hidden max-w-5xl mx-auto">
-                        <div className="absolute top-0 right-0 w-[30rem] h-[30rem] bg-brand-accent/20 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
+                    <div className="bg-[#181818] backdrop-blur-2xl border border-[#282828] rounded-[3rem] p-12 md:p-20 shadow-2xl relative overflow-hidden max-w-5xl mx-auto hover:border-[#1DB954]/30 transition-colors duration-300">
+                        <div className="absolute top-0 right-0 w-[30rem] h-[30rem] bg-[#1DB954]/10 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2"></div>
                         
                         <div className="relative z-10">
-                            <h2 className="text-4xl md:text-5xl font-black mb-6 text-foreground tracking-tight">{content.cta.title}</h2>
-                            <p className="text-brand-mutedLight mb-10 max-w-lg mx-auto text-xl font-light">
+                            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white tracking-tight">{content.cta.title}</h2>
+                            <p className="text-[#b3b3b3] mb-10 max-w-lg mx-auto text-xl font-light">
                                 {content.cta.subtitle}
                             </p>
-                            <Button href={TELEGRAM_LINK} variant="primary" className="px-12 py-4 text-lg rounded-full">
+                            <Button href={TELEGRAM_LINK} variant="primary" className="px-12 py-4 text-lg rounded-full hover:scale-105 transition-transform duration-300">
                                 {content.cta.button}
                             </Button>
                         </div>
@@ -59,7 +59,7 @@ const MainContent: React.FC = () => {
             <div className="fixed bottom-6 left-4 right-4 z-40 md:hidden">
                 <a 
                     href={TELEGRAM_LINK} 
-                    className="flex items-center justify-center gap-3 w-full bg-brand-dark dark:bg-brand-accent text-white dark:text-brand-dark font-bold py-4 rounded-2xl shadow-2xl shadow-black/20 backdrop-blur-md"
+                    className="flex items-center justify-center gap-3 w-full bg-[#1DB954] text-black font-bold py-4 rounded-2xl shadow-2xl shadow-[#1DB954]/20 backdrop-blur-md hover:bg-[#1ed760] transition-colors duration-300"
                 >
                     <MessageCircle size={20} />
                     {content.cta.button}
