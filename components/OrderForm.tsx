@@ -79,14 +79,21 @@ export const OrderForm: React.FC = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const buildOrderMessage = (type: OrderType, data: FormData): string => {
+    const baseInfo = `سفارش جدید:\nنام: ${data.firstName} ${data.lastName}\nایمیل: ${data.email}`;
+    
+    if (type === 'personal') {
+      return `${baseInfo}\nنوع: فعال‌سازی ایمیل شخصی\nلینک فاکتور: ${data.invoiceLink}`;
+    }
+    return `${baseInfo}\nنوع: اکانت پیش‌ساخته\nتلفن: ${data.phone}`;
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Construct message for Telegram
-    const message = orderType === 'personal'
-      ? `سفارش جدید:\nنوع: فعال‌سازی ایمیل شخصی\nنام: ${formData.firstName} ${formData.lastName}\nایمیل: ${formData.email}\nلینک فاکتور: ${formData.invoiceLink}`
-      : `سفارش جدید:\nنوع: اکانت پیش‌ساخته\nنام: ${formData.firstName} ${formData.lastName}\nایمیل: ${formData.email}\nتلفن: ${formData.phone}`;
+    // Build the order message (can be used for analytics or clipboard copy)
+    const message = buildOrderMessage(orderType, formData);
     
-    // Show success and redirect to Telegram
+    // Show success state - user will be prompted to go to Telegram
     setIsSubmitted(true);
   };
 

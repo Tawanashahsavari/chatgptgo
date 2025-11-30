@@ -200,7 +200,7 @@ export const Hero: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Audio Player */}
+                        {/* Audio Player - Audio file is hosted in the same repository */}
                         <AudioPlayer src="https://raw.githubusercontent.com/tawanamohammadi/chatgptgo/main/audio/gotgo.mp3" />
 
                         {/* Buy Button */}
