@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://panbenet.github.io/chatgpt-go/sitemap.xml

@@ -3,8 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PanbeNet | Premium ChatGPT Go</title>
-    <meta name="description" content="Premium ChatGPT Go Subscription. Secure, Personal, Fast." />
+    
+    <!-- SEO Meta Tags -->
+    <title>خرید اکانت ChatGPT Go | اشتراک قانونی ۱۲ ماهه - PanbeNet</title>
+    <meta name="description" content="خرید اشتراک ChatGPT Go با فعال‌سازی روی ایمیل شخصی. ضمانت بازگشت وجه، اینترنت هدیه و پشتیبانی ۲۴ ساعته. ارزان‌ترین قیمت و تحویل فوری در ایران." />
+    <meta name="keywords" content="خرید chatgpt, اکانت chatgpt, اشتراک chatgpt go, هوش مصنوعی, chatgpt pro, chatgpt plus, panbenet, خرید اکانت هوش مصنوعی, چت جی پی تی" />
+    <meta name="author" content="PanbeNet - Tawana Mohammadi" />
+    <link rel="canonical" href="https://panbenet.github.io/chatgpt-go/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="product" />
+    <meta property="og:url" content="https://panbenet.github.io/chatgpt-go/" />
+    <meta property="og:title" content="اشتراک ۱۲ ماهه ChatGPT Go - تحویل فوری" />
+    <meta property="og:description" content="لایسنس قانونی روی ایمیل شخصی شما + ۹۰ گیگابایت VPN هدیه. ضمانت کامل تا آخرین روز اشتراک." />
+    <meta property="og:image" content="https://cdn.mos.cms.futurecdn.net/v2/t:0,l:0,cw:3996,ch:2247,q:80,w:2560/JFpeVzCqWC5ZbYTbyWu5m8.jpg" />
+    <meta property="og:locale" content="fa_IR" />
+    <meta property="og:site_name" content="PanbeNet Store" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://panbenet.github.io/chatgpt-go/" />
+    <meta property="twitter:title" content="خرید اکانت ChatGPT Go - PanbeNet" />
+    <meta property="twitter:description" content="اشتراک قانونی ChatGPT با ضمانت و هدیه ویژه. فعال‌سازی فوری." />
+    <meta property="twitter:image" content="https://cdn.mos.cms.futurecdn.net/v2/t:0,l:0,cw:3996,ch:2247,q:80,w:2560/JFpeVzCqWC5ZbYTbyWu5m8.jpg" />
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "ChatGPT Go 1-Year Subscription",
+      "image": "https://cdn.mos.cms.futurecdn.net/v2/t:0,l:0,cw:3996,ch:2247,q:80,w:2560/JFpeVzCqWC5ZbYTbyWu5m8.jpg",
+      "description": "اشتراک ۱۲ ماهه ChatGPT Go با فعال‌سازی روی ایمیل شخصی و ضمانت کامل.",
+      "brand": {
+        "@type": "Brand",
+        "name": "OpenAI"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://panbenet.github.io/chatgpt-go/",
+        "priceCurrency": "IRR",
+        "price": "25000000",
+        "priceValidUntil": "2025-12-31",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "1250"
+      }
+    }
+    </script>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +72,7 @@
               persian: ['Vazirmatn', 'sans-serif'],
             },
             colors: {
-              border: "hsl(var(--border))",
+              border: "var(--border)",
               background: "var(--background)",
               foreground: "var(--foreground)",
               brand: {
@@ -31,9 +81,13 @@
                 secondary: '#8b5cf6', // Violet 500
                 tertiary: '#3b82f6', // Blue 500
                 accentHover: '#4f46e5', // Indigo 600
-                muted: '#94a3b8',
-                mutedLight: '#64748b',
+                muted: '#64748b', // Slate 500
+                mutedLight: '#94a3b8', // Slate 400
                 card: '#0f172a',
+                glass: {
+                  light: 'rgba(255, 255, 255, 0.75)',
+                  dark: 'rgba(15, 23, 42, 0.6)',
+                }
               }
             },
             animation: {
@@ -67,13 +121,13 @@
     </script>
     <style>
       :root {
-        --background: #ffffff;
-        --foreground: #0f172a;
+        --background: #f8fafc; 
+        --foreground: #0f172a; 
         --border: #e2e8f0;
       }
       .dark {
-        --background: #020617;
-        --foreground: #f8fafc;
+        --background: #020617; 
+        --foreground: #f8fafc; 
         --border: #1e293b;
       }
       
@@ -85,7 +139,22 @@
       ::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.3); border-radius: 10px; }
       ::-webkit-scrollbar-thumb:hover { background: rgba(99, 102, 241, 0.6); }
 
-      /* Mesh Background - Updated for Indigo/Blue Theme */
+      /* Improved Cinematic Noise */
+      .bg-noise {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 50; /* Bring to front for film grain effect */
+        opacity: 0.035;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        mix-blend-mode: overlay;
+      }
+      .dark .bg-noise { opacity: 0.05; }
+
+      /* Mesh Background */
       .mesh-bg {
         background-color: #020617;
         background-image: 
@@ -95,21 +164,15 @@
         background-size: 150% 150%;
         animation: mesh 25s ease infinite;
       }
+      
       .light-mesh {
         background-color: #f8fafc;
         background-image: 
-          radial-gradient(at 40% 20%, hsla(220, 100%, 97%, 1) 0px, transparent 50%),
-          radial-gradient(at 80% 0%, hsla(260, 100%, 98%, 1) 0px, transparent 50%),
-          radial-gradient(at 0% 50%, hsla(200, 100%, 97%, 1) 0px, transparent 50%);
+          radial-gradient(at 0% 0%, hsla(240, 100%, 96%, 1) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, hsla(260, 100%, 97%, 1) 0px, transparent 50%),
+          radial-gradient(at 50% 100%, hsla(210, 100%, 96%, 1) 0px, transparent 50%);
         background-size: 150% 150%;
-        animation: mesh 15s ease infinite;
-      }
-      .dark .mesh-bg {
-         background-color: #020617;
-         background-image: 
-          radial-gradient(at 0% 0%, hsla(260, 50%, 10%, 0.6) 0px, transparent 60%),
-          radial-gradient(at 90% 10%, hsla(220, 50%, 12%, 0.6) 0px, transparent 60%),
-          radial-gradient(at 50% 60%, hsla(240, 50%, 8%, 0.6) 0px, transparent 60%);
+        animation: mesh 20s ease infinite;
       }
     </style>
   <script type="importmap">
@@ -124,7 +187,8 @@
 }
 </script>
 </head>
-  <body class="bg-background text-foreground antialiased font-sans transition-colors duration-300 overflow-x-hidden">
+  <body class="bg-background text-foreground antialiased font-sans transition-colors duration-500 overflow-x-hidden">
+    <div class="bg-noise"></div>
     <div id="root"></div>
   </body>
 </html>

@@ -55,6 +55,8 @@ export interface Content {
     channelTitle: string;
     channelId: string;
     cta: string;
+    trustChannelTitle: string;
+    trustChannelBtn: string;
   };
   features: {
     title: string;

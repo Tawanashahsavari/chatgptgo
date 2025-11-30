@@ -14,7 +14,8 @@ import {
   CheckCircle2,
   Cpu,
   Lock,
-  Smartphone
+  Smartphone,
+  Percent
 } from 'lucide-react';
 import { FeatureItem, NavItem, StepItem, FAQItem, Content } from './types';
 
@@ -22,6 +23,7 @@ export const TELEGRAM_ID = "Rahbarusd";
 export const TELEGRAM_LINK = `https://t.me/${TELEGRAM_ID}`;
 export const CHANNEL_ID = "panbehnet";
 export const CHANNEL_LINK = `https://t.me/${CHANNEL_ID}`;
+export const TRUST_CHANNEL_LINK = "https://t.me/+Dxp0eP9LH4o5Mjg8";
 export const ABOUT_ME_LINK = "https://tawanamohammadi.bio";
 
 // --- PROFILE IMAGE CONFIGURATION ---
@@ -102,12 +104,14 @@ export const TRANSLATIONS: Record<'fa' | 'en', Content> = {
     },
     seller: {
       title: 'پروفایل تایید شده',
-      name: 'Tawana Mohammadi',
-      role: 'Web Developer & AI Researcher',
+      name: 'توانا محمدی',
+      role: 'پژوهشگر هوش مصنوعی و استراتژیست داده',
       bio: 'پژوهشگر مستقل هوش مصنوعی، استراتژیست داده و مدرس با تمرکز بر اخلاق هوش مصنوعی، شفافیت داده و حقوق دیجیتال. موسس شبکه توانا.',
       channelTitle: 'کانال رسمی',
       channelId: '@panbehnet',
-      cta: 'مشاهده بیوگرافی کامل'
+      cta: 'مشاهده پروفایل کامل',
+      trustChannelTitle: 'کانال اعتماد و تخفیف',
+      trustChannelBtn: 'مشاهده رضایت مشتریان'
     },
     features: {
       title: 'امکانات بی‌‌نهایت',
@@ -205,7 +209,9 @@ export const TRANSLATIONS: Record<'fa' | 'en', Content> = {
       bio: 'Independent AI researcher, data strategist, and educator focused on Ethical AI, data transparency, and human-centered AI design. Founder of Tawana Network.',
       channelTitle: 'Official Channel',
       channelId: '@panbehnet',
-      cta: 'View Full Bio'
+      cta: 'View Full Bio',
+      trustChannelTitle: 'Trust & Discounts',
+      trustChannelBtn: 'View Reviews'
     },
     features: {
       title: 'Limitless Possibilities',
