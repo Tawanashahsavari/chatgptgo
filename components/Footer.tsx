@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="border-t border-[#282828] pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-[10px] text-[#727272] uppercase tracking-wider font-bold">
-          <p>© {year} PanbeNet. All rights reserved.</p>
+          <p>© {year} ChatGPT Go. All rights reserved.</p>
           <p className="opacity-60">Designed for Premium Users</p>
         </div>
       </div>

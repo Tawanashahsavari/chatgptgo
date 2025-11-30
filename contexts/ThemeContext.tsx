@@ -9,17 +9,16 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Default to dark mode as per original design preference, but allow toggle
+  // Default to dark mode as per Spotify-style design preference
   const [theme, setTheme] = useState<Theme>('dark');
 
   useEffect(() => {
-    // Check local storage or system preference on mount
+    // Check local storage on mount, but default to dark if not set
     const savedTheme = localStorage.getItem('theme') as Theme;
     if (savedTheme) {
       setTheme(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      setTheme('light');
     }
+    // Always default to dark mode - do not check system preference
   }, []);
 
   useEffect(() => {
