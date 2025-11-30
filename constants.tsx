@@ -163,7 +163,7 @@ export const TRANSLATIONS: Record<'fa' | 'en', Content> = {
     },
     footer: {
       rights: 'تمامی حقوق محفوظ است.',
-      slogan: 'PanbeNet — پیشرو در خدمات هوش مصنوعی.',
+      slogan: 'ChatGPT Go — پیشرو در خدمات هوش مصنوعی.',
       links: {
         terms: 'قوانین',
         privacy: 'حریم خصوصی',
@@ -263,7 +263,7 @@ export const TRANSLATIONS: Record<'fa' | 'en', Content> = {
     },
     footer: {
       rights: 'All rights reserved.',
-      slogan: 'PanbeNet — Leading in AI Services.',
+      slogan: 'ChatGPT Go — Leading in AI Services.',
       links: {
         terms: 'Terms',
         privacy: 'Privacy',

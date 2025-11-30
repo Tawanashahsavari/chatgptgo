@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
                                 </span>
                              </div>
                              <h3 className="text-5xl font-black mb-1 tracking-tighter bg-gradient-to-r from-white via-[#1DB954] to-white bg-clip-text text-transparent" dir="ltr">ChatGPT <span className="text-[#1DB954]">Go</span></h3>
-                             <p className="text-[#b3b3b3] font-bold text-sm tracking-widest uppercase mt-2">PanbeNet Exclusive</p>
+                             <p className="text-[#b3b3b3] font-bold text-sm tracking-widest uppercase mt-2">ChatGPT Go Exclusive</p>
                         </div>
                     </div>
                 </div>

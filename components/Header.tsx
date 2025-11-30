@@ -36,7 +36,7 @@ export const Header: React.FC = () => {
               G
             </div>
             <div className={`flex flex-col ${!isScrolled && 'drop-shadow-sm'}`}>
-              <span className="font-bold text-lg leading-tight tracking-wide text-foreground">PanbeNet</span>
+              <span className="font-bold text-lg leading-tight tracking-wide text-foreground">ChatGPT Go</span>
               <span className="text-[10px] uppercase tracking-wider font-semibold opacity-70">Store</span>
             </div>
           </div>
