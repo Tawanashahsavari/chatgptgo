@@ -1,9 +1,116 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Star, ShoppingCart, ShieldCheck, Zap, CheckCircle2, Gift, Play, Pause, Volume2 } from 'lucide-react';
+import { Star, ShoppingCart, ShieldCheck, Zap, CheckCircle2, Gift, Play, Pause, Volume2, Users, Timer, Award, Truck, Headphones, Quote } from 'lucide-react';
 import { Button } from './ui/Button';
 import { TELEGRAM_LINK, PAYMENT_METHODS } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
+
+// Countdown Timer Component
+const CountdownTimer: React.FC<{ title: string }> = ({ title }) => {
+  const [time, setTime] = useState({ hours: 23, minutes: 59, seconds: 59 });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(prev => {
+        if (prev.seconds > 0) return { ...prev, seconds: prev.seconds - 1 };
+        if (prev.minutes > 0) return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+        if (prev.hours > 0) return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
+        return { hours: 23, minutes: 59, seconds: 59 }; // Reset
+      });
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatNumber = (n: number) => String(n).padStart(2, '0');
+
+  return (
+    <div className="flex items-center gap-3 bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/40 rounded-2xl px-4 py-3 animate-pulse">
+      <Timer className="text-amber-400 animate-bounce" size={20} />
+      <span className="text-amber-300 font-bold text-sm">{title}</span>
+      <div className="flex gap-1.5 font-mono">
+        <span className="bg-black/40 px-2 py-1 rounded-lg text-white font-bold text-lg">{formatNumber(time.hours)}</span>
+        <span className="text-amber-400 font-bold">:</span>
+        <span className="bg-black/40 px-2 py-1 rounded-lg text-white font-bold text-lg">{formatNumber(time.minutes)}</span>
+        <span className="text-amber-400 font-bold">:</span>
+        <span className="bg-black/40 px-2 py-1 rounded-lg text-white font-bold text-lg">{formatNumber(time.seconds)}</span>
+      </div>
+    </div>
+  );
+};
+
+// Spots Left Badge Component
+const SpotsLeftBadge: React.FC<{ spotsLeft: string; spotsNumber: string }> = ({ spotsLeft, spotsNumber }) => (
+  <motion.div 
+    initial={{ scale: 0.9 }}
+    animate={{ scale: [0.9, 1.05, 0.95, 1] }}
+    transition={{ repeat: Infinity, duration: 2 }}
+    className="flex items-center gap-2 bg-gradient-to-r from-red-500/20 to-rose-500/20 border border-red-500/40 rounded-2xl px-4 py-2"
+  >
+    <Users className="text-red-400" size={18} />
+    <span className="text-red-300 font-bold text-sm">{spotsLeft} <span className="text-white">{spotsNumber}</span></span>
+  </motion.div>
+);
+
+// Testimonial Card Component
+const TestimonialCard: React.FC<{ name: string; role: string; text: string; rating: number }> = ({ name, role, text, rating }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    className="bg-[#141414] border border-[#27272a] rounded-2xl p-5 hover:border-[#22c55e]/30 transition-all duration-300"
+  >
+    <Quote className="text-[#22c55e]/30 mb-3" size={24} />
+    <p className="text-[#d4d4d8] text-sm mb-4 leading-relaxed">{text}</p>
+    <div className="flex items-center justify-between">
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#22c55e] to-[#16a34a] flex items-center justify-center text-black font-bold">
+          {name.charAt(0)}
+        </div>
+        <div>
+          <p className="text-white font-semibold text-sm">{name}</p>
+          <p className="text-[#71717a] text-xs">{role}</p>
+        </div>
+      </div>
+      <div className="flex gap-0.5">
+        {[...Array(rating)].map((_, i) => (
+          <Star key={i} size={14} fill="#22c55e" className="text-[#22c55e]" />
+        ))}
+      </div>
+    </div>
+  </motion.div>
+);
+
+// Trust Badges Bar Component
+const TrustBadgesBar: React.FC = () => {
+  const badges = [
+    { icon: Headphones, title: 'پشتیبانی ۲۴/۷', titleEn: '24/7 Support' },
+    { icon: ShieldCheck, title: 'پرداخت امن', titleEn: 'Secure Payment' },
+    { icon: Award, title: 'گارانتی بازگشت وجه', titleEn: 'Money-back Guarantee' },
+    { icon: Truck, title: 'تحویل فوری', titleEn: 'Instant Delivery' },
+  ];
+
+  const { language } = useLanguage();
+
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 w-full max-w-4xl mx-auto my-8">
+      {badges.map((badge, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: i * 0.1 }}
+          className="flex items-center gap-3 bg-[#141414] border border-[#27272a] rounded-xl p-3 hover:border-[#22c55e]/30 hover:bg-[#141414]/80 transition-all duration-200"
+        >
+          <div className="w-10 h-10 rounded-lg bg-[#22c55e]/10 flex items-center justify-center">
+            <badge.icon className="text-[#22c55e]" size={20} />
+          </div>
+          <span className="text-[#e4e4e7] font-semibold text-xs">{language === 'fa' ? badge.title : badge.titleEn}</span>
+        </motion.div>
+      ))}
+    </div>
+  );
+};
 
 // Custom Audio Player Component
 const AudioPlayer: React.FC<{ src: string }> = ({ src }) => {
@@ -170,10 +277,14 @@ export const Hero: React.FC = () => {
                         </h3>
                         <p className="text-[#d4d4d8] text-sm font-medium mb-4">{content.hero.pricing.period}</p>
 
-                        {/* Price */}
+                        {/* Price with Discount */}
                         <div className="bg-[#0a0a0a] rounded-xl p-4 mb-4 border border-[#27272a]">
+                            <div className="flex items-center gap-3 mb-2">
+                                <span className="text-lg text-[#71717a] line-through font-medium">{content.hero.pricing.originalPrice}</span>
+                                <span className="bg-[#22c55e] text-black text-xs font-bold px-2 py-1 rounded-lg animate-pulse">{content.hero.pricing.discountPercent} OFF</span>
+                            </div>
                             <div className="flex items-baseline gap-2">
-                                <span className="text-3xl font-black text-white">{content.hero.pricing.price}</span>
+                                <span className="text-3xl font-black text-[#22c55e]">{content.hero.pricing.price}</span>
                                 <span className="text-sm font-bold text-[#a1a1aa]">{content.hero.pricing.unit}</span>
                             </div>
                             <p className="text-[10px] text-[#71717a] mt-1">{content.hero.pricing.note}</p>
@@ -220,6 +331,17 @@ export const Hero: React.FC = () => {
              transition={{ delay: 0.2, duration: 0.8 }}
              className="lg:w-7/12 flex flex-col items-center lg:items-start text-center lg:text-start order-2 lg:order-none"
           >
+            {/* Urgency Section - Countdown & Spots */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-5"
+            >
+              <CountdownTimer title={content.hero.urgency.countdownTitle} />
+              <SpotsLeftBadge spotsLeft={content.hero.urgency.spotsLeft} spotsNumber={content.hero.urgency.spotsNumber} />
+            </motion.div>
+
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#141414] border border-[#27272a] text-[#22c55e] text-[11px] font-bold mb-5 shadow-lg tracking-wide uppercase">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#22c55e] opacity-75"></span>
@@ -275,6 +397,27 @@ export const Hero: React.FC = () => {
 
           </motion.div>
         </div>
+
+        {/* Trust Badges Bar */}
+        <TrustBadgesBar />
+
+        {/* Testimonials Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-8 lg:mt-12"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-white mb-2">{content.hero.testimonialsTitle}</h3>
+            <p className="text-[#71717a] text-sm">{content.hero.testimonialsSubtitle}</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+            {content.hero.testimonials.map((testimonial, i) => (
+              <TestimonialCard key={i} {...testimonial} />
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
