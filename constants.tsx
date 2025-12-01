@@ -112,7 +112,9 @@ export const TRANSLATIONS: Record<'fa' | 'en', Content> = {
         { name: 'علی رضایی', role: 'توسعه‌دهنده', text: 'سرویس عالی و پشتیبانی فوق‌العاده. اکانتم در کمتر از ۱۰ دقیقه فعال شد!', rating: 5 },
         { name: 'سارا احمدی', role: 'طراح گرافیک', text: 'قیمت مناسب و کیفیت بالا. به همه دوستانم پیشنهاد می‌کنم.', rating: 5 },
         { name: 'محمد کریمی', role: 'دانشجو', text: 'VPN هدیه هم واقعاً مفید بود. از خریدم راضی هستم.', rating: 5 }
-      ]
+      ],
+      testimonialsTitle: 'نظرات مشتریان',
+      testimonialsSubtitle: '+۱۰۰۰ سفارش موفق با ۹۸٪ رضایت'
     },
     seller: {
       title: 'پروفایل تایید شده',
@@ -224,7 +226,9 @@ export const TRANSLATIONS: Record<'fa' | 'en', Content> = {
         { name: 'Ali Rezaei', role: 'Developer', text: 'Amazing service and outstanding support. My account was activated in less than 10 minutes!', rating: 5 },
         { name: 'Sara Ahmadi', role: 'Graphic Designer', text: 'Great price and high quality. I recommend it to all my friends.', rating: 5 },
         { name: 'Mohammad Karimi', role: 'Student', text: 'The VPN gift was really useful too. Very satisfied with my purchase.', rating: 5 }
-      ]
+      ],
+      testimonialsTitle: 'Customer Reviews',
+      testimonialsSubtitle: '1000+ successful orders with 98% satisfaction'
     },
     seller: {
       title: 'Verified Profile',

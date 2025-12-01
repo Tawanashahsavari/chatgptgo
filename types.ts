@@ -61,6 +61,8 @@ export interface Content {
       spotsNumber: string;
     };
     testimonials: Testimonial[];
+    testimonialsTitle: string;
+    testimonialsSubtitle: string;
   };
   seller: {
     title: string;

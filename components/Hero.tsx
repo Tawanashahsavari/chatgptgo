@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Star, ShoppingCart, ShieldCheck, Zap, CheckCircle2, Gift, Play, Pause, Volume2, Clock, Users, Timer, Award, Truck, CreditCard, Headphones, Quote } from 'lucide-react';
+import { Star, ShoppingCart, ShieldCheck, Zap, CheckCircle2, Gift, Play, Pause, Volume2, Users, Timer, Award, Truck, Headphones, Quote } from 'lucide-react';
 import { Button } from './ui/Button';
 import { TELEGRAM_LINK, PAYMENT_METHODS } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -409,8 +409,8 @@ export const Hero: React.FC = () => {
           className="mt-8 lg:mt-12"
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-2">نظرات مشتریان</h3>
-            <p className="text-[#71717a] text-sm">+۱۰۰۰ سفارش موفق با ۹۸٪ رضایت</p>
+            <h3 className="text-2xl font-bold text-white mb-2">{content.hero.testimonialsTitle}</h3>
+            <p className="text-[#71717a] text-sm">{content.hero.testimonialsSubtitle}</p>
           </div>
           <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
             {content.hero.testimonials.map((testimonial, i) => (
